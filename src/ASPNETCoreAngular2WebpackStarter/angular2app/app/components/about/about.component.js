@@ -18,7 +18,7 @@ var AboutComponent = (function () {
     AboutComponent = __decorate([
         core_1.Component({
             selector: 'about',
-            template: require('./about.component.html')
+            templateUrl: './about.component.html'
         }), 
         __metadata('design:paramtypes', [])
     ], AboutComponent);

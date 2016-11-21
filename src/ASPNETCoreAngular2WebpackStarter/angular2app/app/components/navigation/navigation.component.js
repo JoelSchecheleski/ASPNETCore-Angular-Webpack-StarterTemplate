@@ -15,7 +15,7 @@ var NavigationComponent = (function () {
     NavigationComponent = __decorate([
         core_1.Component({
             selector: 'starterTemplateNavigation',
-            template: require('./navigation.component.html')
+            templateUrl: './navigation.component.html'
         }), 
         __metadata('design:paramtypes', [])
     ], NavigationComponent);

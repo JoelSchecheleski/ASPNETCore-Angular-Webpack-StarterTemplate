@@ -5,7 +5,7 @@ import { SlimLoadingBarService } from 'ng2-slim-loading-bar';
 
 @Component({
     selector: 'home',
-    template: require('./home.component.html')
+    templateUrl: './home.component.html'
 })
 
 export class HomeComponent implements OnInit {
@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
         this._dataService
             .GetAll()
             .subscribe(data => this.values = data,
-            error => (response) => {
+            error => () => {
                 this._toasterService.pop('error', 'Damn', 'Something went wrong...');
             },
             () => {

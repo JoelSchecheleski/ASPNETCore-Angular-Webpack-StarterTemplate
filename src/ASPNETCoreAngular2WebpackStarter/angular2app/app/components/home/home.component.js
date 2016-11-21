@@ -24,7 +24,7 @@ var HomeComponent = (function () {
         this._slimLoadingBarService.start();
         this._dataService
             .GetAll()
-            .subscribe(function (data) { return _this.values = data; }, function (error) { return function (response) {
+            .subscribe(function (data) { return _this.values = data; }, function (error) { return function () {
             _this._toasterService.pop('error', 'Damn', 'Something went wrong...');
         }; }, function () {
             _this._toasterService.pop('success', 'Complete', 'Getting all values complete');
@@ -34,7 +34,7 @@ var HomeComponent = (function () {
     HomeComponent = __decorate([
         core_1.Component({
             selector: 'home',
-            template: require('./home.component.html')
+            templateUrl: './home.component.html'
         }), 
         __metadata('design:paramtypes', [DataService_1.DataService, angular2_toaster_1.ToasterService, ng2_slim_loading_bar_1.SlimLoadingBarService])
     ], HomeComponent);

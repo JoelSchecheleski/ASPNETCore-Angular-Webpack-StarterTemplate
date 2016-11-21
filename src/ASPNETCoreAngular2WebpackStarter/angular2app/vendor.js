@@ -1,6 +1,4 @@
 "use strict";
-// RxJS.
-require("rxjs");
 // Angular 2.
 require("@angular/common");
 require("@angular/compiler");
@@ -9,8 +7,10 @@ require("@angular/http");
 require("@angular/platform-browser");
 require("@angular/platform-browser-dynamic");
 require("@angular/router");
-// Reflect Metadata.
-require("reflect-metadata");
+// RxJS.
+require("rxjs");
+// // Reflect Metadata.
+// import "reflect-metadata";
 // Other vendors for example jQuery, Lodash or Bootstrap
 // You can import js, ts, css, sass, ...
 require("jquery");
