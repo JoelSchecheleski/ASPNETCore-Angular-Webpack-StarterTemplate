@@ -2,6 +2,6 @@
 
 import { AppModule } from './app.module';
 
-import "../styles/custom.css";
+import '../styles/custom.css';
 
 platformBrowserDynamic().bootstrapModule(AppModule);
