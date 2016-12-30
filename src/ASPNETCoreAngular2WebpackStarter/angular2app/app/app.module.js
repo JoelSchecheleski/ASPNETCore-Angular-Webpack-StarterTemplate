@@ -30,7 +30,6 @@ var AppModule = (function () {
                 platform_browser_1.BrowserModule,
                 app_routes_1.routing,
                 http_1.HttpModule,
-                http_1.JsonpModule,
                 angular2_toaster_1.ToasterModule,
                 ng2_slim_loading_bar_1.SlimLoadingBarModule.forRoot()
             ],
@@ -42,7 +41,6 @@ var AppModule = (function () {
                 navigation_component_1.NavigationComponent
             ],
             providers: [
-                app_routes_1.appRoutingProviders,
                 app_constants_1.Configuration,
                 DataService_1.DataService
             ],

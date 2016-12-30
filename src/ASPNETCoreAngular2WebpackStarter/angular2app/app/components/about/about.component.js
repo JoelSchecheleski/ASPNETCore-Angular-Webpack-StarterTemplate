@@ -11,10 +11,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var AboutComponent = (function () {
     function AboutComponent() {
-        this.message = "Hello from About";
+        this.message = 'Hello from About';
     }
-    AboutComponent.prototype.ngOnInit = function () {
-    };
+    AboutComponent.prototype.ngOnInit = function () { };
     AboutComponent = __decorate([
         core_1.Component({
             selector: 'about',

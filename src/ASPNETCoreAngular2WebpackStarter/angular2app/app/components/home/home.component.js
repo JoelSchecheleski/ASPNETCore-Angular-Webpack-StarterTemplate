@@ -17,7 +17,7 @@ var HomeComponent = (function () {
         this._dataService = _dataService;
         this._toasterService = _toasterService;
         this._slimLoadingBarService = _slimLoadingBarService;
-        this.message = "Hello from HomeComponent constructor";
+        this.message = 'Hello from HomeComponent constructor';
     }
     HomeComponent.prototype.ngOnInit = function () {
         var _this = this;

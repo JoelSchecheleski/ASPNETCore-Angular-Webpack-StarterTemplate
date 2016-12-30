@@ -7,6 +7,7 @@
 
   <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
+  <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
     <ProjectGuid>c073602b-3a98-4ed4-89cd-c721810989ef</ProjectGuid>
     <RootNamespace>ASPNETCoreAngular2Demo</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">.\obj</BaseIntermediateOutputPath>

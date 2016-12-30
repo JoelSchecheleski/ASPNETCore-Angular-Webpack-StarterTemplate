@@ -1,20 +1,20 @@
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
-var webpack = require("webpack");
-var HtmlWebpackPlugin = require("html-webpack-plugin");
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
     entry: {
-        "polyfills": "./angular2App/polyfills.ts",
-        "vendor": "./angular2App/vendor.ts",
-        "app": "./angular2App/app/main.ts"
+        'polyfills': './angular2app/polyfills.ts',
+        'vendor': './angular2app/vendor.ts',
+        'app': './angular2app/app/main.ts'
     },
     resolve: {
         extensions: ['', '.ts', '.js', '.json', '.css', '.scss', '.html']
     },
     output: {
-        path: "./wwwroot",
-        filename: "js/[name]-[hash:8].bundle.js"
+        path: './wwwroot',
+        filename: 'js/[name]-[hash:8].bundle.js'
     },
 
     module: {
@@ -25,11 +25,11 @@ module.exports = {
             },
             {
                 test: /\.html$/,
-                loader: "html"
+                loader: 'html'
             },
             {
                 test: /\.(png|jpg|gif|ico|woff|woff2|ttf|svg|eot)$/,
-                loader: "file?name=assets/[name]-[hash:6].[ext]",
+                loader: 'file?name=assets/[name]-[hash:6].[ext]',
             },
 
             // Load css files which are required in vendor.ts
@@ -40,22 +40,22 @@ module.exports = {
         ]
     },
     plugins: [
-        new ExtractTextPlugin("css/[name]-[hash:8].bundle.css"),
+        new ExtractTextPlugin('css/[name]-[hash:8].bundle.css'),
         new webpack.optimize.CommonsChunkPlugin({
-            name: ["app", "vendor", "polyfills"]
+            name: ['app', 'vendor', 'polyfills']
         }),
         new CleanWebpackPlugin(
             [
-                "./wwwroot/js/",
-                "./wwwroot/css/",
-                "./wwwroot/assets/",
-                "./wwwroot/index.html"
+                './wwwroot/js/',
+                './wwwroot/css/',
+                './wwwroot/assets/',
+                './wwwroot/index.html'
             ]
         ),
         // inject in index.html
         new HtmlWebpackPlugin({
-            template: "./angular2App/index.html",
-            inject: "body"
+            template: './angular2app/index.html',
+            inject: 'body'
         }),
         new webpack.ProvidePlugin({
             jQuery: 'jquery',
@@ -65,6 +65,6 @@ module.exports = {
     ],
     devServer: {
         historyApiFallback: true,
-        stats: "minimal"
+        stats: 'minimal'
     }
 };
