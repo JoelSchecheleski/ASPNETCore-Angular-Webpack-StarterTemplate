@@ -5,3 +5,4 @@ src/ASPNETCoreAngular2WebpackStarter/bin
 src/ASPNETCoreAngular2WebpackStarter/node_modules
 .vs/
 npm-debug.log
+src/ASPNETCoreAngular2WebpackStarter/wwwroot/
