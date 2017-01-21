@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,11 +7,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var DataService_1 = require('../../services/DataService');
-var angular2_toaster_1 = require('angular2-toaster/angular2-toaster');
-var ng2_slim_loading_bar_1 = require('ng2-slim-loading-bar');
-var HomeComponent = (function () {
+import { Component } from '@angular/core';
+import { DataService } from '../../services/DataService';
+import { ToasterService } from 'angular2-toaster/angular2-toaster';
+import { SlimLoadingBarService } from 'ng2-slim-loading-bar';
+export var HomeComponent = (function () {
     function HomeComponent(_dataService, _toasterService, _slimLoadingBarService) {
         this._dataService = _dataService;
         this._toasterService = _toasterService;
@@ -32,13 +31,11 @@ var HomeComponent = (function () {
         });
     };
     HomeComponent = __decorate([
-        core_1.Component({
+        Component({
             selector: 'home',
             templateUrl: './home.component.html'
         }), 
-        __metadata('design:paramtypes', [DataService_1.DataService, angular2_toaster_1.ToasterService, ng2_slim_loading_bar_1.SlimLoadingBarService])
+        __metadata('design:paramtypes', [DataService, ToasterService, SlimLoadingBarService])
     ], HomeComponent);
     return HomeComponent;
 }());
-exports.HomeComponent = HomeComponent;
-//# sourceMappingURL=home.component.js.map

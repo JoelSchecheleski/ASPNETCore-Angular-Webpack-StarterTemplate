@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,47 +7,45 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var app_component_1 = require('./app.component');
-var app_constants_1 = require('./app.constants');
-var app_routes_1 = require('./app.routes');
-var http_1 = require('@angular/http');
-var home_component_1 = require('./components/home/home.component');
-var about_component_1 = require('./components/about/about.component');
-var footer_component_1 = require('./components/footer/footer.component');
-var navigation_component_1 = require('./components/navigation/navigation.component');
-var DataService_1 = require('./services/DataService');
-var angular2_toaster_1 = require('angular2-toaster/angular2-toaster');
-var ng2_slim_loading_bar_1 = require('ng2-slim-loading-bar');
-var AppModule = (function () {
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
+import { Configuration } from './app.constants';
+import { routing } from './app.routes';
+import { HttpModule } from '@angular/http';
+import { HomeComponent } from './components/home/home.component';
+import { AboutComponent } from './components/about/about.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { DataService } from './services/DataService';
+import { ToasterModule } from 'angular2-toaster/angular2-toaster';
+import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
+export var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
-        core_1.NgModule({
+        NgModule({
             imports: [
-                platform_browser_1.BrowserModule,
-                app_routes_1.routing,
-                http_1.HttpModule,
-                angular2_toaster_1.ToasterModule,
-                ng2_slim_loading_bar_1.SlimLoadingBarModule.forRoot()
+                BrowserModule,
+                routing,
+                HttpModule,
+                ToasterModule,
+                SlimLoadingBarModule.forRoot()
             ],
             declarations: [
-                app_component_1.AppComponent,
-                home_component_1.HomeComponent,
-                about_component_1.AboutComponent,
-                footer_component_1.FooterComponent,
-                navigation_component_1.NavigationComponent
+                AppComponent,
+                HomeComponent,
+                AboutComponent,
+                FooterComponent,
+                NavigationComponent
             ],
             providers: [
-                app_constants_1.Configuration,
-                DataService_1.DataService
+                Configuration,
+                DataService
             ],
-            bootstrap: [app_component_1.AppComponent]
+            bootstrap: [AppComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);
     return AppModule;
 }());
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map

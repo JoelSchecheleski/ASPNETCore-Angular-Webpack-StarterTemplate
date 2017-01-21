@@ -5,42 +5,50 @@ var CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
     entry: {
-        'polyfills': './angular2app/polyfills.ts',
-        'vendor': './angular2app/vendor.ts',
         'app': './angular2app/app/main.ts'
     },
+    devtool: 'source-map',
+    performance: {
+        hints: false
+    },
     resolve: {
-        extensions: ['', '.ts', '.js', '.json', '.css', '.scss', '.html']
+        extensions: ['.ts', '.js', '.json', '.css', '.scss', '.html']
     },
     output: {
         path: './wwwroot',
-        filename: 'js/[name]-[hash:8].bundle.js'
+        filename: 'js/[name].bundle.js'
     },
 
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.ts$/,
-                loaders: ['awesome-typescript-loader', 'angular2-template-loader']
+                loaders: [
+                    'awesome-typescript-loader',
+                    'angular2-template-loader'
+                ]
             },
             {
                 test: /\.html$/,
-                loader: 'html'
+                loader: 'html-loader'
             },
             {
                 test: /\.(png|jpg|gif|ico|woff|woff2|ttf|svg|eot)$/,
-                loader: 'file?name=assets/[name]-[hash:6].[ext]',
+                loader: 'file-loader?name=assets/[name].[ext]',
             },
 
             // Load css files which are required in vendor.ts
             {
                 test: /\.css$/,
-                loader: ExtractTextPlugin.extract('style', 'css')
+                loader: ExtractTextPlugin.extract({
+                    fallbackLoader: "style-loader",
+                    loader: "css-loader"
+                })
             }
         ]
     },
     plugins: [
-        new ExtractTextPlugin('css/[name]-[hash:8].bundle.css'),
+        new ExtractTextPlugin('css/[name].bundle.css'),
         new webpack.optimize.CommonsChunkPlugin({
             name: ['app', 'vendor', 'polyfills']
         }),
