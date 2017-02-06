@@ -1,4 +1,4 @@
-# Angular // Webpack // ASP.NET CORE WebAPI Starter Template
+# Angular // Webpack 2 // ASP.NET CORE WebAPI Starter Template
 
 This is a starter template for developing Angular with ASP.NET Core WebAPI Applications using webpack for bundling. It has the webpack dev server included as well as css styles in webpack, hashes for your files, automatic injection into the index.html etc.
 
@@ -6,7 +6,7 @@ This template is an Angular application with an http-service getting values from
 
 ## Blogpost
 
-[How to set up Angular 2 and Webpack in Visual Studio with ASP.NET Core](http://offering.solutions/articles/asp-net/how-to-set-up-angular-2-and-webpack-in-visual-studio-with-asp-net-core/)
+[How to set up Angular and Webpack in Visual Studio with ASP.NET Core](http://offering.solutions/articles/asp-net/how-to-set-up-angular-2-and-webpack-in-visual-studio-with-asp-net-core/)
 
 ## Start
 
