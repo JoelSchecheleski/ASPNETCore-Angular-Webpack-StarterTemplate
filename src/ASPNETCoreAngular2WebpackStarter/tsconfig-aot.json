@@ -15,11 +15,6 @@
       "dom"
     ]
   },
-//   "files": [
-//     "angular2App/app/app.module.ts",
-//     "angular2App/app/modules/about/about.module.ts",
-//     "angular2App/main-aot.ts"
-//   ],
   "angularCompilerOptions": {
     "genDir": "aot",
     "skipMetadataEmit": true

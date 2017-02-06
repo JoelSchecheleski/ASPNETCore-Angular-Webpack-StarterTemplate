@@ -5,9 +5,9 @@ var CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
     entry: {
-        'polyfills': './angular2app/polyfills.ts',
-        'vendor': './angular2app/vendor.ts',
-        'app': './angular2app/app/main-aot.ts'
+        'polyfills': './angularApp/polyfills.ts',
+        'vendor': './angularApp/vendor.ts',
+        'app': './angularApp/app/main-aot.ts'
     },
     resolve: {
         extensions: ['.ts', '.js', '.json', '.css', '.scss', '.html']
@@ -16,7 +16,6 @@ module.exports = {
         path: './wwwroot',
         filename: 'js/[name]-[hash:6].bundle.js'
     },
-    devtool: 'nosources-source-map',
     module: {
         rules: [
             {
@@ -45,7 +44,7 @@ module.exports = {
     plugins: [
         new ExtractTextPlugin('css/[name]-[hash:6].bundle.css'),
         new webpack.optimize.CommonsChunkPlugin({
-            name: ['vendor', 'polyfills']
+            name: ['app', 'vendor', 'polyfills']
         }),
         new CleanWebpackPlugin(
             [
@@ -57,7 +56,7 @@ module.exports = {
         ),
         // inject in index.html
         new HtmlWebpackPlugin({
-            template: './angular2app/index.html',
+            template: './angularApp/index.html',
             inject: 'body'
         }),
         new webpack.optimize.UglifyJsPlugin({
@@ -74,9 +73,5 @@ module.exports = {
             $: 'jquery',
             jquery: 'jquery'
         })
-    ],
-    devServer: {
-        historyApiFallback: true,
-        stats: 'minimal'
-    }
+    ]
 };

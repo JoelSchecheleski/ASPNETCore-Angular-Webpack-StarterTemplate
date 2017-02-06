@@ -5,7 +5,7 @@ var CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
     entry: {
-        'app': './angular2app/app/main.ts'
+        'app': './angularApp/app/main.ts'
     },
     devtool: 'source-map',
     performance: {
@@ -62,7 +62,7 @@ module.exports = {
         ),
         // inject in index.html
         new HtmlWebpackPlugin({
-            template: './angular2app/index.html',
+            template: './angularApp/index.html',
             inject: 'body'
         }),
         new webpack.ProvidePlugin({
