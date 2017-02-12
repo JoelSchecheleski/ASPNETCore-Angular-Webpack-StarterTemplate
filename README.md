@@ -2,11 +2,17 @@
 
 This is a starter template for developing Angular with ASP.NET Core WebAPI Applications using webpack for bundling. It has the webpack dev server included as well as css styles in webpack, hashes for your files, automatic injection into the index.html etc.
 
+## NPM Taskrunner
+
+Make sure you have the npm Taskrunner installed
+
+[NPM Task Runner](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.NPMTaskRunner)
+
 This template is an Angular application with an http-service getting values from an ASP.NET CORE WebAPI.
 
 ## Blogpost
 
-[How to set up Angular and Webpack in Visual Studio with ASP.NET Core](http://offering.solutions/articles/asp-net/how-to-set-up-angular-2-and-webpack-in-visual-studio-with-asp-net-core/)
+[How to set up Angular and Webpack in Visual Studio with ASP.NET Core](https://offering.solutions/blog/articles/2016/08/27/how-to-set-up-angular-and-webpack-in-visual-studio-with-asp-net-core/)
 
 ## Start
 

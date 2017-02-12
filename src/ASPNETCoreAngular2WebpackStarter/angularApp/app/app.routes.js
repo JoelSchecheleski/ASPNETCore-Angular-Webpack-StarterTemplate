@@ -7,3 +7,4 @@ var appRoutes = [
     { path: 'about', component: AboutComponent }
 ];
 export var routing = RouterModule.forRoot(appRoutes);
+//# sourceMappingURL=app.routes.js.map

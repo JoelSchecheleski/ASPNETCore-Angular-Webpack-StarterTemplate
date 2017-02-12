@@ -11,7 +11,7 @@ import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Configuration } from '../app.constants';
-export var DataService = (function () {
+var DataService = (function () {
     function DataService(_http, _configuration) {
         var _this = this;
         this._http = _http;
@@ -39,9 +39,11 @@ export var DataService = (function () {
         this.headers.append('Content-Type', 'application/json');
         this.headers.append('Accept', 'application/json');
     }
-    DataService = __decorate([
-        Injectable(), 
-        __metadata('design:paramtypes', [Http, Configuration])
-    ], DataService);
     return DataService;
 }());
+DataService = __decorate([
+    Injectable(),
+    __metadata("design:paramtypes", [Http, Configuration])
+], DataService);
+export { DataService };
+//# sourceMappingURL=DataService.js.map

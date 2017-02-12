@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
 import { DataService } from '../../services/DataService';
 import { ToasterService } from 'angular2-toaster/angular2-toaster';
 import { SlimLoadingBarService } from 'ng2-slim-loading-bar';
-export var HomeComponent = (function () {
+var HomeComponent = (function () {
     function HomeComponent(_dataService, _toasterService, _slimLoadingBarService) {
         this._dataService = _dataService;
         this._toasterService = _toasterService;
@@ -30,12 +30,16 @@ export var HomeComponent = (function () {
             _this._slimLoadingBarService.complete();
         });
     };
-    HomeComponent = __decorate([
-        Component({
-            selector: 'home',
-            templateUrl: './home.component.html'
-        }), 
-        __metadata('design:paramtypes', [DataService, ToasterService, SlimLoadingBarService])
-    ], HomeComponent);
     return HomeComponent;
 }());
+HomeComponent = __decorate([
+    Component({
+        selector: 'home',
+        templateUrl: './home.component.html'
+    }),
+    __metadata("design:paramtypes", [DataService,
+        ToasterService,
+        SlimLoadingBarService])
+], HomeComponent);
+export { HomeComponent };
+//# sourceMappingURL=home.component.js.map
