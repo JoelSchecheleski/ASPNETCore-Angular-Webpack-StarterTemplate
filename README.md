@@ -12,7 +12,7 @@ This template is an Angular application with an http-service getting values from
 
 ## Blogpost
 
-[How to set up Angular and Webpack in Visual Studio with ASP.NET Core](https://offering.solutions/blog/articles/2016/08/27/how-to-set-up-angular-and-webpack-in-visual-studio-with-asp-net-core/)
+[How to set up Angular and Webpack in Visual Studio with ASP.NET Core](http://offering.solutions/blog/articles/2016/08/27/how-to-set-up-angular-2-and-webpack-in-visual-studio-with-asp-net-core/)
 
 ## Start
 
