@@ -16,7 +16,7 @@ This template is an Angular application with an http-service getting values from
 
 ## Start
 
-![alt text](_gitAssets/f09e144a-a5fe-4025-9d79-e939a58ea792.jpg "Screenshot")
+![alt text](.github/f09e144a-a5fe-4025-9d79-e939a58ea792.jpg "Screenshot")
 
 Start by typing
 
@@ -40,13 +40,13 @@ If you change the *.ts-files you need to run the `tsc` command manually.
 
 and see the page working. You can do changes to the application and they will be automatically reflected in the browser.
 
-![alt text](_gitAssets/9f561485-c6e6-44cc-acde-03eb29822a1b.jpg "Screenshot")
+![alt text](.github/9f561485-c6e6-44cc-acde-03eb29822a1b.jpg "Screenshot")
 
 ### Option 4 (frontend and backend running)
 
 You can type `npm run build` and browse to `localhost:5000` to see the page. This will trigger an webpack build and an `dotnet run`. Changes will not automatically appear in the browser.
 
-![alt text](_gitAssets/e86cea01-b880-4eae-9a81-df6af6180ca2.jpg "Screenshot")
+![alt text](.github/e86cea01-b880-4eae-9a81-df6af6180ca2.jpg "Screenshot")
 
 
 
