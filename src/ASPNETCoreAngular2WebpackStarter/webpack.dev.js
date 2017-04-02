@@ -2,6 +2,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
+var path = require('path');
 
 module.exports = {
     entry: {
@@ -15,7 +16,7 @@ module.exports = {
         extensions: ['.ts', '.js', '.json', '.css', '.scss', '.html']
     },
     output: {
-        path: './wwwroot',
+        path: path.join(__dirname, 'wwwroot'),
         filename: 'js/[name].bundle.js'
     },
 
@@ -63,7 +64,8 @@ module.exports = {
         // inject in index.html
         new HtmlWebpackPlugin({
             template: './angularApp/index.html',
-            inject: 'body'
+            inject: 'body',
+            filename: 'index.html'
         }),
         new webpack.ProvidePlugin({
             jQuery: 'jquery',
