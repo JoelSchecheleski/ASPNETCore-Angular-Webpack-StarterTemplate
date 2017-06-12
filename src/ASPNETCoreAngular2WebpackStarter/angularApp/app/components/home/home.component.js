@@ -42,4 +42,3 @@ HomeComponent = __decorate([
         SlimLoadingBarService])
 ], HomeComponent);
 export { HomeComponent };
-//# sourceMappingURL=home.component.js.map
