@@ -7,13 +7,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 import { Component } from '@angular/core';
 var FooterComponent = (function () {
     function FooterComponent() {
+        this.today = Date.now();
     }
     return FooterComponent;
 }());
 FooterComponent = __decorate([
     Component({
-        selector: 'starterTemplateFooter',
+        selector: 'app-footer-component',
         templateUrl: './footer.component.html'
     })
 ], FooterComponent);
 export { FooterComponent };
+//# sourceMappingURL=footer.component.js.map

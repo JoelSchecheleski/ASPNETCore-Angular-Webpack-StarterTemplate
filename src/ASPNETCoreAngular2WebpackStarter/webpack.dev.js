@@ -1,19 +1,19 @@
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var CleanWebpackPlugin = require('clean-webpack-plugin');
-var path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const path = require('path');
 
 module.exports = {
     entry: {
         'app': './angularApp/app/main.ts'
     },
-    devtool: 'source-map',
+    devtool: 'cheap-module-eval-source-map',
     performance: {
         hints: false
     },
     resolve: {
-        extensions: ['.ts', '.js', '.json', '.css', '.scss', '.html']
+        extensions: ['.ts', '.js', '.json']
     },
     output: {
         path: path.join(__dirname, 'wwwroot'),
@@ -24,32 +24,34 @@ module.exports = {
         rules: [
             {
                 test: /\.ts$/,
-                loaders: [
+                use: [
                     'awesome-typescript-loader',
-                    'angular2-template-loader'
+                    'angular-router-loader',
+                    'angular2-template-loader',
+                    'source-map-loader',
+                    'tslint-loader'
                 ]
             },
             {
                 test: /\.html$/,
-                loader: 'html-loader'
+                use: 'html-loader'
             },
             {
                 test: /\.(png|jpg|gif|ico|woff|woff2|ttf|svg|eot)$/,
-                loader: 'file-loader?name=assets/[name].[ext]',
+                use: 'file-loader?name=assets/[name].[ext]',
             },
-
-            // Load css files which are required in vendor.ts
             {
                 test: /\.css$/,
-                loader: ExtractTextPlugin.extract({
-                    fallbackLoader: "style-loader",
-                    loader: "css-loader"
+                use: ExtractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: "css-loader"
                 })
             }
         ]
     },
     plugins: [
         new ExtractTextPlugin('css/[name].bundle.css'),
+        new webpack.optimize.ModuleConcatenationPlugin(),
         new webpack.optimize.CommonsChunkPlugin({
             name: ['app', 'vendor', 'polyfills']
         }),

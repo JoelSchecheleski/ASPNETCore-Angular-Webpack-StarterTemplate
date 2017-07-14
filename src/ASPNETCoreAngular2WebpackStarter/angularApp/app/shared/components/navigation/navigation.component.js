@@ -12,8 +12,9 @@ var NavigationComponent = (function () {
 }());
 NavigationComponent = __decorate([
     Component({
-        selector: 'starterTemplateNavigation',
+        selector: 'app-navigation-component',
         templateUrl: './navigation.component.html'
     })
 ], NavigationComponent);
 export { NavigationComponent };
+//# sourceMappingURL=navigation.component.js.map

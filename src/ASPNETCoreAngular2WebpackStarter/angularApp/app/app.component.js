@@ -12,8 +12,9 @@ var AppComponent = (function () {
 }());
 AppComponent = __decorate([
     Component({
-        selector: 'my-app',
+        selector: 'app-sample',
         templateUrl: './app.component.html'
     })
 ], AppComponent);
 export { AppComponent };
+//# sourceMappingURL=app.component.js.map

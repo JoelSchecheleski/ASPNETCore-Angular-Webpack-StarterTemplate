@@ -17,9 +17,10 @@ var AboutComponent = (function () {
 }());
 AboutComponent = __decorate([
     Component({
-        selector: 'about',
+        selector: 'app-about-component',
         templateUrl: './about.component.html'
     }),
     __metadata("design:paramtypes", [])
 ], AboutComponent);
 export { AboutComponent };
+//# sourceMappingURL=about.component.js.map

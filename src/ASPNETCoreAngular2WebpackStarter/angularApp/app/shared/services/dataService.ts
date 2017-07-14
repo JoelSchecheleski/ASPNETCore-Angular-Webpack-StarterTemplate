@@ -1,8 +1,10 @@
-﻿import { Injectable } from '@angular/core';
-import { Http, Response, Headers } from '@angular/http';
-import 'rxjs/add/operator/map';
+﻿import 'rxjs/add/operator/map';
+
+import { Injectable } from '@angular/core';
+import { Headers, Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { Configuration } from '../app.constants';
+
+import { Configuration } from '../../app.constants';
 
 @Injectable()
 export class DataService {
@@ -28,7 +30,7 @@ export class DataService {
     }
 
     public Add = (itemName: string): Observable<Response> => {
-        let toAdd = JSON.stringify({ ItemName: itemName });
+        const toAdd = JSON.stringify({ ItemName: itemName });
 
         return this._http.post(this.actionUrl, toAdd, { headers: this.headers }).map(res => res.json());
     }

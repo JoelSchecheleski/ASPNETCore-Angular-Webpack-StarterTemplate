@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../services/DataService';
 import { ToasterService } from 'angular2-toaster/angular2-toaster';
 import { SlimLoadingBarService } from 'ng2-slim-loading-bar';
 
+import { DataService } from '../../shared/services/dataService';
+
 @Component({
-    selector: 'home',
+    selector: 'app-home-component',
     templateUrl: './home.component.html'
 })
 

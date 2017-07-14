@@ -8,9 +8,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
-import { DataService } from '../../services/DataService';
 import { ToasterService } from 'angular2-toaster/angular2-toaster';
 import { SlimLoadingBarService } from 'ng2-slim-loading-bar';
+import { DataService } from '../../shared/services/dataService';
 var HomeComponent = (function () {
     function HomeComponent(_dataService, _toasterService, _slimLoadingBarService) {
         this._dataService = _dataService;
@@ -34,7 +34,7 @@ var HomeComponent = (function () {
 }());
 HomeComponent = __decorate([
     Component({
-        selector: 'home',
+        selector: 'app-home-component',
         templateUrl: './home.component.html'
     }),
     __metadata("design:paramtypes", [DataService,
@@ -42,3 +42,4 @@ HomeComponent = __decorate([
         SlimLoadingBarService])
 ], HomeComponent);
 export { HomeComponent };
+//# sourceMappingURL=home.component.js.map

@@ -7,10 +7,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Injectable } from '@angular/core';
-import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
-import { Configuration } from '../app.constants';
+import { Injectable } from '@angular/core';
+import { Headers, Http } from '@angular/http';
+import { Configuration } from '../../app.constants';
 var DataService = (function () {
     function DataService(_http, _configuration) {
         var _this = this;
@@ -46,3 +46,4 @@ DataService = __decorate([
     __metadata("design:paramtypes", [Http, Configuration])
 ], DataService);
 export { DataService };
+//# sourceMappingURL=dataService.js.map

@@ -1,8 +1,9 @@
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var CleanWebpackPlugin = require('clean-webpack-plugin');
-var path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const path = require('path');
+const ngToolsWebpack = require('@ngtools/webpack');
 
 module.exports = {
     entry: {
@@ -10,40 +11,45 @@ module.exports = {
         'vendor': './angularApp/vendor.ts',
         'app': './angularApp/app/main-aot.ts'
     },
+    devtool: 'source-map',
     resolve: {
-        extensions: ['.ts', '.js', '.json', '.css', '.scss', '.html']
+        extensions: ['.ts', '.js', '.json']
     },
     output: {
         path: path.join(__dirname, 'wwwroot'),
-        filename: 'js/[name]-[hash:6].bundle.js'
+        filename: 'js/[name].[hash:6].bundle.js',
+        chunkFilename: 'js/[id].[hash:6].chunk.js',
     },
     module: {
         rules: [
             {
                 test: /\.ts$/,
-                loaders: ['awesome-typescript-loader', 'angular2-template-loader']
+                use: '@ngtools/webpack'
             },
             {
                 test: /\.html$/,
-                loader: 'html-loader'
+                use: 'html-loader'
             },
             {
                 test: /\.(png|jpg|gif|ico|woff|woff2|ttf|svg|eot)$/,
-                loader: 'file-loader?name=assets/[name]-[hash:6].[ext]',
+                use: 'file-loader?name=assets/[name]-[hash:6].[ext]',
             },
-
-            // Load css files which are required in vendor.ts
             {
                 test: /\.css$/,
-                loader: ExtractTextPlugin.extract({
-                    fallbackLoader: "style-loader",
-                    loader: "css-loader"
+                use: ExtractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: "css-loader"
                 })
             }
         ]
     },
     plugins: [
+        // AoT plugin.
+        new ngToolsWebpack.AotPlugin({
+            tsConfigPath: './tsconfig-aot.json'
+        }),
         new ExtractTextPlugin('css/[name]-[hash:6].bundle.css'),
+        new webpack.optimize.ModuleConcatenationPlugin(),
         new webpack.optimize.CommonsChunkPlugin({
             name: ['app', 'vendor', 'polyfills']
         }),
@@ -68,7 +74,7 @@ module.exports = {
             output: {
                 comments: false
             },
-            sourceMap: false
+            sourceMap: true
         }),
         new webpack.ProvidePlugin({
             jQuery: 'jquery',

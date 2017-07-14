@@ -5,18 +5,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from './app.component';
-import { Configuration } from './app.constants';
-import { routing } from './app.routes';
 import { HttpModule } from '@angular/http';
-import { HomeComponent } from './components/home/home.component';
-import { AboutComponent } from './components/about/about.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { NavigationComponent } from './components/navigation/navigation.component';
-import { DataService } from './services/DataService';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToasterModule } from 'angular2-toaster/angular2-toaster';
 import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
+import { AboutComponent } from './about/about/about.component';
+import { AppComponent } from './app.component';
+import { Configuration } from './app.constants';
+import { AppRoutes } from './app.routes';
+import { HomeComponent } from './home/home/home.component';
+import { SharedModule } from './shared/shared.module';
 var AppModule = (function () {
     function AppModule() {
     }
@@ -26,23 +25,23 @@ AppModule = __decorate([
     NgModule({
         imports: [
             BrowserModule,
-            routing,
+            BrowserAnimationsModule,
+            AppRoutes,
             HttpModule,
             ToasterModule,
-            SlimLoadingBarModule.forRoot()
+            SlimLoadingBarModule.forRoot(),
+            SharedModule
         ],
         declarations: [
             AppComponent,
             HomeComponent,
             AboutComponent,
-            FooterComponent,
-            NavigationComponent
         ],
         providers: [
-            Configuration,
-            DataService
+            Configuration
         ],
         bootstrap: [AppComponent]
     })
 ], AppModule);
 export { AppModule };
+//# sourceMappingURL=app.module.js.map
