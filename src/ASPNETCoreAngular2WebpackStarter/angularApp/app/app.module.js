@@ -10,7 +10,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToasterModule } from 'angular2-toaster/angular2-toaster';
 import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
-import { AboutComponent } from './about/about/about.component';
 import { AppComponent } from './app.component';
 import { Configuration } from './app.constants';
 import { AppRoutes } from './app.routes';
@@ -34,8 +33,7 @@ AppModule = __decorate([
         ],
         declarations: [
             AppComponent,
-            HomeComponent,
-            AboutComponent,
+            HomeComponent
         ],
         providers: [
             Configuration

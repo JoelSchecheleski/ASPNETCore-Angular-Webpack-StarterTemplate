@@ -1,10 +1,9 @@
-import { RouterModule } from '@angular/router';
-import { AboutComponent } from './about/about/about.component';
+import { PreloadAllModules, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home/home.component';
 var appRoutes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
-    { path: 'about', component: AboutComponent }
+    { path: 'about', loadChildren: './about/about.module#AboutModule' }
 ];
-export var AppRoutes = RouterModule.forRoot(appRoutes);
+export var AppRoutes = RouterModule.forRoot(appRoutes, { useHash: true, preloadingStrategy: PreloadAllModules });
 //# sourceMappingURL=app.routes.js.map
