@@ -3,9 +3,9 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp1.1</TargetFramework>
     <PreserveCompilationContext>true</PreserveCompilationContext>
-    <AssemblyName>ASPNETCoreAngular2WebpackStarter</AssemblyName>
+    <AssemblyName>ASPNETCoreAngularWebpackStarter</AssemblyName>
     <OutputType>Exe</OutputType>
-    <PackageId>ASPNETCoreAngular2WebpackStarter</PackageId>
+    <PackageId>ASPNETCoreAngularWebpackStarter</PackageId>
     <RuntimeFrameworkVersion>1.1.0</RuntimeFrameworkVersion>
   </PropertyGroup>
 
