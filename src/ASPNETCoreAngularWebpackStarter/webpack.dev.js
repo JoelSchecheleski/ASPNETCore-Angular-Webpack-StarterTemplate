@@ -63,6 +63,10 @@ module.exports = {
                 './wwwroot/index.html'
             ]
         ),
+        new webpack.ContextReplacementPlugin(
+            /angular(\\|\/)core(\\|\/)@angular/,
+            path.resolve(__dirname, '../src')
+        ),
         // inject in index.html
         new HtmlWebpackPlugin({
             template: './angularApp/index.html',

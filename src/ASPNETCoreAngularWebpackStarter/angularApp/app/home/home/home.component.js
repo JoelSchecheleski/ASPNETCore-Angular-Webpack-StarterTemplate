@@ -22,7 +22,7 @@ var HomeComponent = (function () {
         var _this = this;
         this._slimLoadingBarService.start();
         this._dataService
-            .GetAll()
+            .getAll()
             .subscribe(function (data) { return _this.values = data; }, function (error) { return function () {
             _this._toasterService.pop('error', 'Damn', 'Something went wrong...');
         }; }, function () {

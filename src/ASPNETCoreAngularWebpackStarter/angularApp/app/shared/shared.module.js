@@ -5,11 +5,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 import { CommonModule } from '@angular/common';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
-import { DataService } from './services/dataService';
+import { CustomInterceptor, DataService } from './services/dataService';
 var SharedModule = (function () {
     function SharedModule() {
     }
@@ -20,7 +21,12 @@ SharedModule = __decorate([
         imports: [CommonModule, RouterModule],
         exports: [FooterComponent, NavigationComponent],
         declarations: [FooterComponent, NavigationComponent],
-        providers: [DataService],
+        providers: [DataService,
+            {
+                provide: HTTP_INTERCEPTORS,
+                useClass: CustomInterceptor,
+                multi: true,
+            }],
     })
 ], SharedModule);
 export { SharedModule };

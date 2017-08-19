@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToasterModule } from 'angular2-toaster/angular2-toaster';
@@ -16,7 +16,7 @@ import { SharedModule } from './shared/shared.module';
         BrowserModule,
         BrowserAnimationsModule,
         AppRoutes,
-        HttpModule,
+        HttpClientModule,
         ToasterModule,
         SlimLoadingBarModule.forRoot(),
         SharedModule

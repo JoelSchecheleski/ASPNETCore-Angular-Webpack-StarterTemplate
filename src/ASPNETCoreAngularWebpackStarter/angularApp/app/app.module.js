@@ -5,7 +5,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToasterModule } from 'angular2-toaster/angular2-toaster';
@@ -26,7 +26,7 @@ AppModule = __decorate([
             BrowserModule,
             BrowserAnimationsModule,
             AppRoutes,
-            HttpModule,
+            HttpClientModule,
             ToasterModule,
             SlimLoadingBarModule.forRoot(),
             SharedModule
