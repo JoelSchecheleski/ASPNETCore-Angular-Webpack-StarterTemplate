@@ -16,9 +16,6 @@ var DataService = (function () {
         this.http = http;
         this._configuration = _configuration;
         this.actionUrl = _configuration.ServerWithApiUrl + 'values/';
-        this.headers = new Headers();
-        this.headers.append('Content-Type', 'application/json');
-        this.headers.append('Accept', 'application/json');
     }
     DataService.prototype.getAll = function () {
         return this.http.get(this.actionUrl);
