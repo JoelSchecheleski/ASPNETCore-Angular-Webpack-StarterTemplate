@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
         this._slimLoadingBarService.start();
 
         this._dataService
-            .getAll()
+            .getAll<any[]>()
             .subscribe((data: any[]) => this.values = data,
             error => () => {
                 this._toasterService.pop('error', 'Damn', 'Something went wrong...');

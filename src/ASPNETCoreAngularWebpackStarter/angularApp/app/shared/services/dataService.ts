@@ -10,15 +10,9 @@ import { Configuration } from '../../app.constants';
 export class DataService {
 
     private actionUrl: string;
-    private headers: Headers;
 
     constructor(private http: HttpClient, private _configuration: Configuration) {
-
         this.actionUrl = _configuration.ServerWithApiUrl + 'values/';
-
-        this.headers = new Headers();
-        this.headers.append('Content-Type', 'application/json');
-        this.headers.append('Accept', 'application/json');
     }
 
     public getAll<T>(): Observable<T> {
