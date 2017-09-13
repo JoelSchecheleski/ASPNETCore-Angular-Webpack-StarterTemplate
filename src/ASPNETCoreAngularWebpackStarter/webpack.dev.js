@@ -42,10 +42,13 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: "style-loader",
-                    use: "css-loader"
-                })
+                exclude: path.resolve(__dirname, "angularApp"),
+                use: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader' })
+            },
+            {
+                test: /\.css$/,
+                include: path.resolve(__dirname, "angularApp"),
+                use: 'raw-loader'
             }
         ]
     },

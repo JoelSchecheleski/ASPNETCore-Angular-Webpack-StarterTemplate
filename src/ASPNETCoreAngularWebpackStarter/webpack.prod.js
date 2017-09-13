@@ -11,7 +11,6 @@ module.exports = {
         'vendor': './angularApp/vendor.ts',
         'app': './angularApp/app/main-aot.ts'
     },
-    devtool: 'source-map',
     resolve: {
         extensions: ['.ts', '.js', '.json']
     },
@@ -36,10 +35,17 @@ module.exports = {
             },
             {
                 test: /\.css$/,
+                exclude: path.resolve(__dirname, "angularApp"),
                 use: ExtractTextPlugin.extract({
-                    fallback: "style-loader",
-                    use: "css-loader"
+                    fallback: 'style-loader', use: [
+                        { loader: 'css-loader', options: { minimize: true } }
+                    ]
                 })
+            },
+            {
+                test: /\.css$/,
+                include: path.resolve(__dirname, "angularApp"),
+                use: 'raw-loader'
             }
         ]
     },
@@ -74,7 +80,7 @@ module.exports = {
             output: {
                 comments: false
             },
-            sourceMap: true
+            sourceMap: false
         }),
         new webpack.ProvidePlugin({
             jQuery: 'jquery',
