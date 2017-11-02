@@ -22,7 +22,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.ts$/,
+                test: /(?:\.ngfactory\.js|\.ngstyle\.js|\.ts)$/,
                 use: '@ngtools/webpack'
             },
             {
@@ -50,8 +50,7 @@ module.exports = {
         ]
     },
     plugins: [
-        // AoT plugin.
-        new ngToolsWebpack.AotPlugin({
+        new ngToolsWebpack.AngularCompilerPlugin({
             tsConfigPath: './tsconfig-aot.json'
         }),
         new ExtractTextPlugin('css/[name]-[hash:6].bundle.css'),

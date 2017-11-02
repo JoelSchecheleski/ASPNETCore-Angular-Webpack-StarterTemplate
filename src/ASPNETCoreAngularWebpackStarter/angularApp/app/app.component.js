@@ -13,7 +13,8 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     Component({
         selector: 'app-sample',
-        templateUrl: './app.component.html'
+        templateUrl: './app.component.html',
+        styleUrls: ['app.component.css']
     })
 ], AppComponent);
 export { AppComponent };
